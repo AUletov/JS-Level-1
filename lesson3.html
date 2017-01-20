@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Lesson1</title>
+	<script>
+
+  // Задание 1
+		for (var i = 1; i <= 100; i++) {
+      var j = (i % 15 == 0) ? 'FizzBuzz' : (i % 3 == 0) ? 'Fizz' : (i % 5 == 0) ? 'Buzz' : j = i;
+      // Тернарный оператор с несколькими условиями
+      console.log(j);
+    }
+
+  // Задание 2
+    var simbolsString = '';
+        for (var lineNumber = 1; lineNumber <= 7; lineNumber++) {
+        // Начинаем с 1й линии, после выполнения тела цикла, переходим на следующую, до 7й включительно
+          // Тело цикла
+          simbolsString += '#'; // На первой линии при "склеивании" получается один символ , на 2й - два, и т.д.
+          console.log(simbolsString); // Выводим в каждой линии строку с соответствующим кол-м символов
+        }
+
+  // Задание 3*
+    for (var doubleLine = 1; doubleLine<=4; doubleLine++) { // Делаем 2 вида строк (с пробелами в разных местах), и выводим их парами
+        var firstString = '';
+        var secondString = '';
+
+        for (var simbolNumber = 1; simbolNumber <= 8; simbolNumber++) { // В первой строке на месте четных элементов пробелы
+          if (simbolNumber % 2 == 0) {
+           firstString += ' ';
+         }
+          else {
+           firstString += '#';
+         }
+        }
+        console.log(firstString); // Выводим первую "склеенную" строку
+
+        for (var simbolNumber = 1; simbolNumber <= 8; simbolNumber++) { // Во второй строке на месте нечетных элементов пробелы
+          if (simbolNumber % 2 == 0) {
+           secondString += '#';
+         }
+          else {
+           secondString += ' ';
+         }
+        }
+        console.log(secondString); // Выводим вторую "склеенную" строку
+     }
+	</script>
+</head>
+<body>
+</body>
+</html>
