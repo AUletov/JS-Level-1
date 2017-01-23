@@ -21,6 +21,10 @@
           console.log(simbolsString); // Выводим в каждой линии строку с соответствующим кол-м символов
         }
 
+    for (var lineNumber = 1; lineNumber <= 7; lineNumber++) {
+      console.log('#'.repeat(lineNumber));
+    }
+
   // Задание 3*
     for (var doubleLine = 1; doubleLine<=4; doubleLine++) { // Делаем 2 вида строк (с пробелами в разных местах), и выводим их парами
         var firstString = '';
@@ -45,6 +49,12 @@
          }
         }
         console.log(secondString); // Выводим вторую "склеенную" строку
+     }
+
+     var evenRow = ' #'.repeat(4);
+     var oddRow = '# '.repeat(4);
+     for(var i = 0; i < 8; i++) {
+      console.log(i % 2 ? evenRow : oddRow);
      }
 	</script>
 </head>
