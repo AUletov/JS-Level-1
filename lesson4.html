@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>lesson4</title>
+    <script>
+    // Задание 1
+    function min(value1, value2) {
+        console.log((value1 < value2) ? value1 : value2);
+    }
+    min(0, 10); // 0
+    min(0, -10); // -10
+    min(10, 10); // 10
+
+    // Задание 2а вариант 1
+    function countBS(string){
+      var stringLength = string.length; // Проверяем длину строки string
+      var counter = 0;
+      for(var i=0; i < stringLength; i++){ // Проверяем каждый символ строки по отдельности
+        if(string.charAt(i) == "B"){ // Проверяем совпадает ли текущий символ с символом "B"
+        counter++; // Если символы совпадают, увеличиваем счетчик на единицу
+        }
+      }
+      console.log(counter); // Выводим получившееся значение: 7
+    }
+    countBS("BlockoBfcuBrrBBBBent"); // 7
+
+    // Задание 2а вариант 2 (загуглил как можно это сделать)
+    function countBs(string) {
+      console.log(string.split("B").length-1);
+    /* Как я понял, метод split разбивает строку на массив по разделителю "B": Array [ "", "locko", "fcu", "rr", "", "", "", "ent" ],
+    а метод length-1 определяет номер позиции последнего элемента массива: 7. Хотелось бы послушать коментарии к этому способу */
+    }
+    countBs("BlockoBfcuBrrBBBBent"); // 7
+
+    // Задание 2б вариант 1
+    function countBS(string, simbol){ // Добавляем второй параметр simbol, чтобы можно было посчитать число любого символа в строке
+      var stringLength = string.length;
+      var counter = 0;
+      for(var i=0; i < stringLength; i++){
+        if(string.charAt(i) == simbol){ // Проверяем совпадает ли текущий символ с simbol
+        counter++; // Если символы совпадают, увеличиваем счетчик на единицу
+        }
+      }
+      console.log(counter); // Выводим получившееся значение: 7
+    }
+    countBS("BlockoBfcuBrrBBBBent", "B"); // 7
+
+    // Задание 2б вариант 2
+    function countBs(string, simbol) {
+      console.log(string.split(simbol).length-1)
+    }
+    countBs("BlockoBfcuBrrBBBBent", "B"); // 7
+
+    // Задача со *
+    /* Сначала вообще не понял что нужно сделать, спасибо гуглу, нашел решение (понял, что нужно вывести
+    true, если параметр четный и false, если нечетный) и почти разобрался)))
+    Как я понял, с помощью рекурсивной функции isEven(n - 2) заданный параметр сводится до 0 (если четный)
+    или 1 (если нечетный), которые принимают значения true и false соответсвенно.
+    А отрицательные число сначала переводим в положительные с помощью isEven(-n), и дальше все то же самое делаем (хотя тут я не совсем уверен).*/
+    function isEven(N) {
+      return (N == 0) ? true : (N == 1) ? false : (N < 0) ? isEven(-N) : isEven(N - 2);
+    }
+    console.log(isEven(50));
+    console.log(isEven(75));
+    console.log(isEven(-1));
+    </script>
+</head>
+<body>
+</body>
+</html>
