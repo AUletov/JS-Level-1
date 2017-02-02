@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>lesson5</title>
+    <script>
+    // Задание 1
+    function dec2Hex(dec) {
+        return dec > 15 ? dec.toString(16) : '0' + dec.toString(16);
+    }
+    function rgb2Hex(r, g, b) {
+      return r > 255 || g > 255 || b > 255 ? 'Число должно быть меньше 255' : '#' + dec2Hex(r) + dec2Hex(g) + dec2Hex(b);
+    }
+    console.log(rgb2Hex(153, 213, 41)); // #99d529
+
+    // Задание 2
+    function splitNum(num) {
+      var value = String(num).split('').reverse();
+      var obj = {};
+      obj['единицы'] = value[0];
+      obj['десятки'] = value[1];
+      obj['сотни'] = value[2];
+      for (var i = 0; i < 3; i++) {
+        return num>999 || num<0 ? 'Ошибка: допустимый диапазон 0-999' : obj;
+      }
+    }
+    console.log(splitNum(138)); // единицы: 8; десятки: 3; сотни: 1;
+
+    // Задание *
+    function objectToQueryString(obj){
+      return Object.keys(obj).map(function(key) { return key + '=' + obj[key]; }).join('&');
+    };
+    console.log(objectToQueryString({user: 'Dmitry'}));
+    console.log(objectToQueryString({user: 'Dmitry', password: 'pass'}));
+    console.log(objectToQueryString({user: 'Dmitry', password: 'pass', id:1}));
+    </script>
+</head>
+<body>
+</body>
+</html>

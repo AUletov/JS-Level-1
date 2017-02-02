@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>lesson6</title>
+</head>
+<body>
+  <script>
+    // Задание 1
+    function arrayToList(array){
+      return array.length > 1 ? {value: array.shift(), rest: arrayToList(array)} : {value: array.shift(), rest: null};
+    }
+    console.log(list = arrayToList([1, 2, 3]));
+
+    function listToArray(list) {
+      return list.rest === null ? [list.value] : [list.value].concat(listToArray(list.rest));
+    }
+    console.log(listToArray(list));
+
+    function prepend(element, list) {
+      return arrayToList([element].concat(listToArray(list)));
+    }
+    console.log(list = prepend(4, list));
+
+    function nth (list, num) {
+      list = listToArray(list);
+      return num<list.length - 1 ? list[num] : undefined;
+    }
+    console.log(nth (list, 0));
+    console.log(nth (list, 100500));
+
+    // Задание 2
+
+    function reverseArray (array){
+        var arr = [];
+        for (var i = array.length - 1; i >= 0; i--)
+            arr.push(array[i]);
+        return arr;
+    }
+    console.log(reverseArray(['A','B','C'])); // [ "C", "B", "A" ]
+
+    function reverseArrayInPlace(array) {
+        for (var i = 0; i < (array.length / 2); i++){
+            var old = array[i];
+            array[i] = array[array.length - 1 - i];
+            array[array.length - 1 - i] = old;
+        }
+        return array;
+    }
+    console.log(reverseArrayInPlace([1, 2, 3, 4, 5])); // [ 5, 4, 3, 2, 1 ]
+  </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>contest</title>
+    <script>
+    function isPalindrome(a) {
+      a=a.replace(/\W/g,'').toLowerCase()
+      return a==[...a].reverse().join``
+      /*1) Оставляем в тексте только буквы (.replace(/[\W_]/g,'')), и приводим к нижнему регистру (.toLowerCase()).
+      	2) Делаем из получившейся строки массив ([...a]), меняем порядок на обратный (.reverse()), и снова делаем строку (.join``).
+      		Нашел, как можно  это в ES6 написать, так получается короче.
+      	3) Сравниваем получившиеся строки и возвращем результат (return a==[...a].reverse().join``).
+        3) Получается 69 символов.*/
+    }
+    console.log(isPalindrome("level")); // true
+    console.log(isPalindrome("levels")); // false
+    console.log(isPalindrome("A car, a man, a maraca")); // true
+    </script>
+</head>
+<body>
+</body>
+</html>
